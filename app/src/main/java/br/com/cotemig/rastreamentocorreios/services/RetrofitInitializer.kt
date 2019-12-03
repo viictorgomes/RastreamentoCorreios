@@ -30,4 +30,14 @@ class RetrofitInitializer {
         return retrofit.create(ServiceRastreio::class.java)
     }
 
+    private val retrofit2 = Retrofit.Builder()
+        .client(okHttpClient)
+        .baseUrl("https://api.fluo.site/v1/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+    fun serviceAccount(): ServiceAccount {
+        return retrofit2.create(ServiceAccount::class.java)
+    }
+
 }
