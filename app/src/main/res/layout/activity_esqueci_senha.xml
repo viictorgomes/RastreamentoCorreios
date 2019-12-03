@@ -18,16 +18,20 @@
     />
     <EditText
             android:id="@+id/edtxt_email"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:hint="@string/email"
             android:layout_below="@+id/edtxt_nome"
             android:layout_centerInParent="true"
     />
     <Button
             android:id="@+id/btn_esqueci_senha"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:text="@string/redefinir"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
