@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">RastreamentoCorreios</string>
+    <string name="login">Login</string>
+    <string name="nome">Nome</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="confirmarSenha">Confirmar senha</string>
+    <string name="esqueciSenha">Esqueci minha senha</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="textoRecuperarSenha">Digite seu email e clique em redefinir para resetar sua senha</string>
+    <string name="redefinir">Redefinir</string>
+
+
+    <string name="item_data">Data</string>
+    <string name="item_hora">Hora</string>
+    <string name="item_local">Local</string>
+    <string name="item_acao">Ação</string>
+    <string name="item_mensagem">Mensagem</string>
+    <string name="item_quando">Quando</string>
+
+</resources>
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.CadastrarActivity">
+
+    <EditText
+            android:id="@+id/edtxt_nome"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:hint="@string/nome"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+    />
+
+    <EditText
+            android:id="@+id/edtxt_email"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:hint="@string/email"
+            android:layout_below="@+id/edtxt_nome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+    />
+
+    <EditText
+            android:id="@+id/edtxt_senha"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/edtxt_email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:hint="@string/senha"
+            android:inputType="textPassword"
+    />
+    <EditText
+        android:id="@+id/edtxt_confirmar_senha"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:hint="@string/confirmarSenha"
+        android:inputType="textPassword"
+        android:layout_below="@+id/edtxt_senha"
+/>
+
+    <Button
+            android:id="@+id/btn_login"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="@string/cadastrar"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+    />
+
+
+</RelativeLayout>

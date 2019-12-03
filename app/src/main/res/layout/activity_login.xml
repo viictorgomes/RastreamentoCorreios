@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.LoginActivity">
+
+    <EditText
+            android:id="@+id/edtxt_email"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:hint="@string/email"
+            android:layout_above="@+id/edtxt_senha"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+    />
+
+    <EditText
+            android:id="@+id/edtxt_senha"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_above="@+id/btn_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:hint="@string/senha"
+            android:inputType="textPassword"
+    />
+
+    <Button
+            android:id="@+id/btn_login"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="@string/login"
+            android:layout_centerInParent="true"
+    />
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btn_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+    >
+        <TextView
+                android:id="@+id/txt_esqueci_senha"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/esqueciSenha"
+                android:textSize="16sp"
+        />
+        <TextView
+                android:id="@+id/txt_cadastrar"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textSize="16sp"
+                android:text="@string/cadastrar"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/txt_esqueci_senha"
+                android:textColor="@color/red"
+        />
+
+    </LinearLayout>
+</RelativeLayout>
