@@ -7,32 +7,24 @@
         android:layout_height="match_parent"
         tools:context=".ui.activities.InicioActivity">
 
-    <TextView
-            android:id="@+id/codigo1"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="@string/codigo1"
-            android:textSize="26sp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-        />
-
     <ImageView
-            android:id="@+id/searchCodigo1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:id="@+id/add_objeto"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/icon_add"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="30dp"
+            android:layout_alignParentBottom="true"
             android:layout_marginRight="30dp"
-            android:src="@drawable/icon_search"
-        />
-    <View
+            android:layout_marginBottom="30dp"
+
+            />
+
+    <ListView
+            android:id="@+id/ListaObjetos"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/black"
-            android:layout_below="@id/codigo1"
-            android:layout_marginTop="15dp"
-        />
+            android:layout_height="match_parent"
+            android:layout_above="@id/add_objeto"
+            />
 
 
 </RelativeLayout>

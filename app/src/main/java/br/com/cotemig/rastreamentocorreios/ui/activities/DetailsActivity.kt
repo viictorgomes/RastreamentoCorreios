@@ -17,7 +17,7 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
-        var codigo = intent.getStringExtra(getString(R.string.codigo1))
+        var codigo = intent.getStringExtra("codigo")
 
         if (codigo.isNullOrEmpty()){
             Toast.makeText(this@DetailsActivity, "Código inválido", Toast.LENGTH_LONG).show()

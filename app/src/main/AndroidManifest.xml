@@ -12,9 +12,10 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.DetailsActivity"></activity>
-        <activity android:name=".ui.activities.InicioActivity"></activity>
-        <activity android:name=".ui.activities.CadastrarActivity"></activity>
+        <activity android:name=".ui.activities.ObjetoActivity"></activity>
+        <activity android:name=".ui.activities.DetailsActivity" />
+        <activity android:name=".ui.activities.InicioActivity" />
+        <activity android:name=".ui.activities.CadastrarActivity" />
         <activity android:name=".ui.activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.EsqueciSenhaActivity"></activity>
+        <activity android:name=".ui.activities.EsqueciSenhaActivity" />
     </application>
 
 </manifest>

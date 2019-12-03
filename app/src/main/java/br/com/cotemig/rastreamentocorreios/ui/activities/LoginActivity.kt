@@ -42,8 +42,9 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun telaInicio(){
+    fun telaInicio(id: String){
         val intent = Intent(this, InicioActivity::class.java)
+        intent.putExtra("id", id)
         startActivity(intent)
     }
     fun auth() {
@@ -61,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Account>?, response: Response<Account>?) {
                 response?.let {
                     if (it.code() == 200) {
-                        telaInicio()
+                        telaInicio(it.body().id)
                     } else {
                         Toast.makeText(this@LoginActivity, "Usuário ou senha inválido", Toast.LENGTH_LONG).show()
                     }
