@@ -11,7 +11,7 @@ import br.com.cotemig.rastreamentocorreios.models.Evento
 
 class EventoAdapter(var context: Context, var list: List<Evento>) : BaseAdapter(){
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        var view = LayoutInflater.from(context).inflate(R.layout.item_evento, parent, false)
+        var view = LayoutInflater.from(context).inflate(R.layout.item_evento, null)
 
         var data = view.findViewById<TextView>(R.id.data)
         data.text = list[position].data

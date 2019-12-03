@@ -13,4 +13,7 @@ interface ServiceAccount {
     @POST("account")
     fun register(@Body account: Account): Call<Account>
 
+    @POST("account/forgot")
+    fun forgot(@Body account: Account): Call<Void>
+
 }

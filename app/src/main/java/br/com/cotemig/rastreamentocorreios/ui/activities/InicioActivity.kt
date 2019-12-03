@@ -1,5 +1,6 @@
 package br.com.cotemig.rastreamentocorreios.ui.activities
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import br.com.cotemig.rastreamentocorreios.services.RetrofitInitializer
@@ -18,36 +19,12 @@ class InicioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
 
-        rastrearObjeto("OH674471493BR")
+        codigo1.setOnClickListener {
+            val intent = Intent(this, DetailsActivity::class.java)
+            intent.putExtra(getString(R.string.codigo1), codigo1.text.toString())
+            startActivity(intent)
+        }
     }
 
-    fun rastrearObjeto(codigo: String) {
 
-        var s = RetrofitInitializer().serviceObjeto()
-        var call = s.rastrearObjeto(codigo)
-
-        call.enqueue(object : retrofit2.Callback<ListaEventos> {
-
-            override fun onResponse(call: Call<ListaEventos>?, response: Response<ListaEventos>?) {
-
-                response?.let {
-                    if(it.code() == 200){
-                        listaEventos.adapter = EventoAdapter(this@InicioActivity, it.body().lista)
-                        status.text="onResponse - code 200"
-                    }
-                    else{
-                        Toast.makeText(this@InicioActivity, "resposta da api diferente de 200", Toast.LENGTH_LONG).show()
-                        status.text="onResponse - code != 200"
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<ListaEventos>?, t: Throwable?) {
-                Toast.makeText(this@InicioActivity, "onFailure", Toast.LENGTH_LONG).show()
-                status.text = "onFailure " + t.toString()
-
-            }
-
-        })
-    }
 }

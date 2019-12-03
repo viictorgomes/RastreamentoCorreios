@@ -32,6 +32,7 @@ class CadastrarActivity : AppCompatActivity() {
 
         if (txtSenha != txtConfirmarSenha){
             Toast.makeText(this@CadastrarActivity, "As senhas são diferentes.", Toast.LENGTH_LONG).show()
+            return
         }
 
         var s = RetrofitInitializer().serviceAccount()

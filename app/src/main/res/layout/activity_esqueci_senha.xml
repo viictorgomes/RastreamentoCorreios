@@ -25,7 +25,7 @@
             android:layout_centerInParent="true"
     />
     <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_esqueci_senha"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:text="@string/redefinir"

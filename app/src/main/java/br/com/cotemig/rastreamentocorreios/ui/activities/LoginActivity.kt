@@ -41,6 +41,11 @@ class LoginActivity : AppCompatActivity() {
         val intent = Intent(this, CadastrarActivity::class.java)
         startActivity(intent)
     }
+
+    fun telaInicio(){
+        val intent = Intent(this, InicioActivity::class.java)
+        startActivity(intent)
+    }
     fun auth() {
 
         var s = RetrofitInitializer().serviceAccount()
@@ -56,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Account>?, response: Response<Account>?) {
                 response?.let {
                     if (it.code() == 200) {
-                        Toast.makeText(this@LoginActivity, "Autenticado!!!", Toast.LENGTH_LONG).show()
+                        telaInicio()
                     } else {
                         Toast.makeText(this@LoginActivity, "Usuário ou senha inválido", Toast.LENGTH_LONG).show()
                     }
