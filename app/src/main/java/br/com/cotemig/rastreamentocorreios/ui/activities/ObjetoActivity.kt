@@ -38,7 +38,7 @@ class ObjetoActivity : AppCompatActivity() {
         var s = RetrofitInitializer().serviceObjeto()
 
         var id = id
-        var objeto = edtxt_senha.text.toString()
+        var objeto = edtxt_objeto.text.toString()
 
         var call = s.cadastrarObjeto(id, objeto)
 

@@ -13,6 +13,7 @@ import retrofit2.Call
 import retrofit2.Response
 import android.widget.Toast
 import br.com.cotemig.rastreamentocorreios.models.ListaObjetos
+import br.com.cotemig.rastreamentocorreios.models.Objeto
 import br.com.cotemig.rastreamentocorreios.ui.adapters.ObjetoAdapter
 import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.item_objeto.*
@@ -31,16 +32,26 @@ class InicioActivity : AppCompatActivity() {
             val intent = Intent(this, ObjetoActivity::class.java)
             intent.putExtra("id", id)
             startActivity(intent)
+            carregar()
         }
-
+        refresh.setOnClickListener{
+            carregar()
+        }
         carregar()
+
+        criarFuncaoClique()
     }
 
     fun criarFuncaoClique(){
-        codigo.setOnClickListener {
+        var idConta = id
+        ListaObjetos.setOnItemClickListener { parent, view, position, id ->
+            val myItem = parent.getItemAtPosition(position) as Objeto
+
             val intent = Intent(this, DetailsActivity::class.java)
-            intent.putExtra("codigo", codigo.text.toString())
+            intent.putExtra("codigo", myItem.objeto)
+            intent.putExtra("id", idConta)
             startActivity(intent)
+            carregar()
         }
     }
 
@@ -57,8 +68,8 @@ class InicioActivity : AppCompatActivity() {
                         var lista = it.body().lista
                         lista?.let{lista ->
                             ListaObjetos.adapter = ObjetoAdapter(this@InicioActivity, lista)
+
                         }
-                        criarFuncaoClique()
 
                     }
                     else{

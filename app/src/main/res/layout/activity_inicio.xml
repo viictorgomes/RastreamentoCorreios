@@ -19,6 +19,18 @@
 
             />
 
+    <ImageView
+            android:id="@+id/refresh"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/icon_refresh"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="30dp"
+
+            />
+
     <ListView
             android:id="@+id/ListaObjetos"
             android:layout_width="match_parent"

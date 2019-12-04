@@ -1,5 +1,6 @@
 package br.com.cotemig.rastreamentocorreios.ui.activities
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -14,10 +15,13 @@ import retrofit2.Response
 
 class DetailsActivity : AppCompatActivity() {
 
+    var id = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
         var codigo = intent.getStringExtra("codigo")
+        id = intent.getStringExtra("id")
 
         if (codigo.isNullOrEmpty()){
             Toast.makeText(this@DetailsActivity, "Código inválido", Toast.LENGTH_LONG).show()
@@ -27,6 +31,37 @@ class DetailsActivity : AppCompatActivity() {
             rastrearObjeto(codigo)
         }
 
+        btn_deletar.setOnClickListener{
+            deletarObjeto(id, codigo)
+        }
+
+    }
+
+    fun deletarObjeto(id: String, codigo: String){
+        var s = RetrofitInitializer().serviceObjeto()
+        var call = s.deletarObjeto(id, codigo)
+
+        call.enqueue(object : retrofit2.Callback<Void> {
+
+            override fun onResponse(call: Call<Void>?, response: Response<Void>?) {
+
+                response?.let {
+                    if(it.code() == 200){
+                        finish()
+
+                    }
+                    else{
+                        Toast.makeText(this@DetailsActivity, "resposta da api diferente de 200", Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Void>?, t: Throwable?) {
+                Toast.makeText(this@DetailsActivity, "onFailure", Toast.LENGTH_LONG).show()
+
+            }
+
+        })
     }
 
     fun rastrearObjeto(codigo: String) {

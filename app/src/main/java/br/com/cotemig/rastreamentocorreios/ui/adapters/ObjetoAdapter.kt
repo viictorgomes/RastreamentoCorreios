@@ -20,7 +20,7 @@ class ObjetoAdapter(var context: Context, var list: List<Objeto>) : BaseAdapter(
     }
 
     override fun getItem(position: Int): Any {
-        return ""
+        return list[position]
     }
 
     override fun getItemId(position: Int): Long {
